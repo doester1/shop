@@ -1,0 +1,159 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(to right, #f4f4f4, #e7e7e7);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Ograniczona szerokość do 400px */
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    width: 60%; /* Dostosowanie logo do mniejszych ekranów */
+    margin-bottom: 20px;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    padding-left: 40px; /* Odstęp na ikonę */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #aaa;
+    font-size: 1.2em;
+}
+
+.input-group input:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
+.checkbox-group {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.checkbox-group input {
+    margin-right: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db; /* Jasnoniebieski kolor przycisku */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Płynne przejścia dla koloru i transformacji */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+.login-container button:hover {
+    background-color: #2980b9; /* Ciemniejszy kolor po najechaniu */
+    transform: translateY(-3px); /* Efekt unoszenia przycisku */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Większy cień po najechaniu */
+}
+
+.login-container button:active {
+    background-color: #1f639a; /* Kolor po kliknięciu */
+    transform: translateY(1px); /* Subtelne obniżenie przycisku */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Mniejszy cień po kliknięciu */
+}
+
+
+.error {
+    color: #e74c3c; /* Czerwony kolor */
+    background-color: #f8d7da; /* Jasne tło */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border: 1px solid #f5c6cb;
+    text-align: center; /* Wyrównanie tekstu do środka */
+}
+
+.register-link {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.register-link a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.privacy-link {
+    margin-top: 15px;
+    font-size: 0.8em;
+}
+
+.privacy-link a {
+    color: #333;
+    text-decoration: none;
+}
+
+.privacy-link a:hover {
+    text-decoration: underline;
+}
+
+/* Dodaj responsywność */
+@media (max-width: 600px) {
+    .login-container {
+        max-width: 100%;
+        margin: 0 10px;
+        padding: 20px 15px;
+    }
+
+    .input-group i {
+        font-size: 1em;
+        top: 10px;
+    }
+
+    .login-container h1 {
+        font-size: 1.5em;
+    }
+}

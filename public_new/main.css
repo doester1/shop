@@ -1,0 +1,617 @@
+/* Podstawowy styl */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.iphone {
+    font-size: 18px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+body.iphone header .logo a {
+    font-size: 22px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .menu li {
+    margin-left: 15px;
+}
+
+header .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+header .menu a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    max-width: 400px; /* Increase max-width */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 300px; /* Ensure minimum height for better visibility */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .product-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.iphone .product-card {
+    padding: 10px;
+    max-width: 100%;
+}
+
+.product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+    font-size: 18px; /* Increase font size for better readability */
+}
+
+body.dark-mode .product-info {
+    background: rgba(255, 255, 255, 0.7);
+    color: #000;
+}
+
+body.iphone .product-info {
+    font-size: 16px;
+}
+
+.product-card:hover .product-info {
+    transform: translateY(0);
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #007bff;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #0056b3, #003f7f);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #0056b3;
+}
+
+.unavailable-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-weight: bold;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-card:hover .unavailable-overlay {
+    opacity: 0;
+}
+
+.last-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 165, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Formularz zamówienia */
+#orderForm {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.form-content input,
+.form-content select,
+.form-content button {
+    margin: 10px 0;
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.form-content button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-content button:hover {
+    background-color: #45a049;
+}
+
+.form-content button[type="button"] {
+    background-color: #f44336;
+    font-weight: normal;
+}
+
+.form-content button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+/* Przykładowy overlay, aby zablokować dostęp do reszty strony */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Styl dla tła strony */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animacja dla formularza */
+#orderForm {
+    animation: showForm 0.5s ease-out;
+}
+
+@keyframes showForm {
+    from {
+        transform: translate(-50%, -40%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* Styl responsywny */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .menu li {
+        margin: 5px 0;
+    }
+
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 100%; /* Ensure it takes the full width */
+        margin: 10px 0;
+    }
+
+    #orderForm {
+        width: 95%;
+    }
+
+    #darkModeToggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1001; /* Ensure it is above other elements */
+        cursor: pointer;
+    }
+
+    .notification-banner {
+        font-size: 14px; /* Further adjust font size for smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+        width: 95%; /* Ensure it fits within the screen */
+    }
+
+    .product-card .product-info {
+        transform: translateY(0) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo a {
+        font-size: 20px;
+    }
+
+    .product-card {
+        width: 100%; /* Ensure it takes the full width */
+    }
+
+    #orderForm {
+        width: 100%;
+    }
+
+    #darkModeToggle {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+    }
+
+    .notification-banner {
+        font-size: 12px; /* Further adjust font size for smaller screens */
+        padding: 6px; /* Adjust padding for smaller screens */
+        width: 95%; /* Ensure it fits within the screen */
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+footer .social-icons {
+    margin: 20px 0;
+}
+
+footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #ddd;
+}
+
+footer .footer-links {
+    margin: 20px 0;
+}
+
+footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #ddd;
+}
+
+footer .footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer .footer-logo img {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+footer .footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    z-index: 1001; /* Ensure it is above other elements */
+}
+
+.scroll-to-top i {
+    margin-right: 10px;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 60px; /* Ensure it does not overlap with the navbar */
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    z-index: 1001; /* Ensure it is above other elements */
+}
+
+.dark-mode-toggle i {
+    margin-right: 10px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.filter-container select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.message-banner {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.message-banner .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Enhanced notification display */
+.notification-banner {
+    padding: 0px;
+    margin: 0; /* Remove margins */
+    position: relative;
+    border-radius: 0; /* Remove rounded corners */
+    box-shadow: none; /* Remove box shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideDown 0.5s ease-out;
+    font-size: 18px;
+    text-align: center;
+    width: 100%; /* Ensure it fits within the screen */
+    max-width: 100%; /* Ensure it does not exceed the screen width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notification-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97%;
+}
+
+.notification-text {
+    flex-grow: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .notification-banner {
+        font-size: 14px; /* Further adjust font size for smaller screens */
+        padding: 0px; /* Adjust padding for smaller screens */
+        width: 95%; /* Ensure it fits within the screen */
+    }
+}
+
+@media (max-width: 480px) {
+    .notification-banner {
+        font-size: 12px; /* Further adjust font size for smaller screens */
+        padding: 0px; /* Adjust padding for smaller screens */
+        width: 95%; /* Ensure it fits within the screen */
+    }
+}
+
+@media (max-width: 768px) {
+    .notification-banner {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .notification-banner {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+.ad-banner {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.ad-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
